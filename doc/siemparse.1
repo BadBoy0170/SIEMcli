@@ -1,0 +1,45 @@
+.TH SIEMPARSE 1
+.SH NAME
+siemparse - CLI tool to parse lines from standard input into a siemcli database
+
+.SH SYNOPSIS
+
+\fBsiemparse\fR [\fB-h] [\fB--version\fR] [\fB-c \fICONFIG\fR] [\fb-s \fISECTION\fR] [\fB-z \fITZONE\fR] [\fIfile\fR]
+
+.SH DESCRIPTION
+\fBsiemparse\fR is a CLI tool to parse syslog lines from a log file or standard input into a siemcli database.
+
+.SH OPTIONS
+
+  usage: \fBsiemparse\fR [\fBoptions\fR]
+  
+  positional arguments:
+    file           set a file to follow
+
+  optional arguments:
+    -h, --help     show this help message and exit
+    --version      show program's version number and exit
+    -c CONFIG      set the config file
+    -s SECTION     set the config section
+    -z TZONE       set the offset to UTC (e.g. '+0500')
+
+.SH EXAMPLES
+    siemparse /var/log/messages
+    siemparse -s auth /var/log/auth.log
+
+.SH SEE ALSO
+    siemcli(7)
+    siemquery(1)
+    siemtrigger(1)
+    siemmanage(1)
+
+.SH FILES
+    /etc/siemcli/db.conf
+    /etc/siemcli/sections.conf
+    /usr/share/doc/siemcli/example_helpers.json
+    /usr/share/doc/siemcli/README.md
+    /usr/share/doc/siemcli/LICENSE
+    /usr/share/doc/siemcli/CHANGELOG.md
+
+  
+ 

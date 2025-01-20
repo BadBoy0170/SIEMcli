@@ -1,0 +1,71 @@
+.TH SIEMQUERY 1
+.SH NAME
+siemquery - A CLI tool to perform queries on a siemcli database
+
+.SH SYNOPSIS
+
+\fBsiemquery\fR [\fB-h] [\fB--version\fR] [\fB-c \fICONFIG\fR] [\fb-s \fISECTION\fR] [\fB--verbose\fR] [\fB--silent\fR] [\fB--rule\fR] [\fB--json \fIFILE\fR] [\fB--table \fITABLE\fR] [\fB--last \fILAST\fR] [\fB--range \fISTART-FINISH\fR] [\fB--id \fIID\fR] [\fB--shost \fIHOST\fR] [\fB--sport \fIPORT\fR] [\fB--dhost \fIHOST\fR] [\fB--dport \fIPORT\fR] [\fB--process \fIPROCESS\fR] [\fB--protocol \fIPROTOCOL\fR] [\fB--pid \fIPID\fR] [\fB--grep \fIPATTERN\fR] [\fB--rshost \fIHOST\fR] [\fB--rsport \fIPORT\fR] [\fB--rdhost \fIHOST\fR] [\fB--rdport \fIPORT\fR] [\fB--rprocess \fIPROCESS\fR] [\fB--rpid \fIPID\fR] [\fB--rprotocol \fIPROTOCOL\fR] [\fB--rgrep \fIPATTERN\fR] 
+
+.SH DESCRIPTION
+\fBsiemquery\fR is a CLI tool to query a siemcli database.
+
+.SH OPTIONS
+
+  usage: \fBsiemquery\fR [\fBoptions\fR]
+
+  optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -c CONFIG             set the config file
+  -s SECTION            set the config section
+  --verbose             print SQL statement used for query
+  --silent              silence table output to terminal
+  --rule                set rule query mode
+  --json FILE           set a JSON output file
+  
+  query options:
+    --table TABLE         set a table to query
+    --last LAST           match a preceeding time range (5m, 24h, etc)
+    --range START-FINISH  match a date range (format: YYmmddHHMMSS)
+    --id ID               match an event ID
+    --shost HOST          match a source host
+    --sport PORT          match a source port
+    --dhost HOST          match a destination host
+    --dport PORT          match a destination port
+    --process PROCESS     match a source process
+    --pid PID             match a source Process ID
+    --protocol PROTOCOL   match a protocol
+    --grep PATTERN        match a pattern
+    --rshost HOST         filter out a source host
+    --rsport PORT         filter out a source port
+    --rdhost HOST         filter out a destination host
+    --rdport PORT         filter out a destination port
+    --rprocess PROCESS    filter out a source process
+    --rpid PID            filter out a source Process ID
+    --rprotocol PROTOCOL  filter out a protocol
+    --rgrep PATTERN       filter out a pattern
+
+.SH EXAMPLES
+    siemquery --last 6h --json events.json
+    siemquery --last 20m -s auth --process sshd --process systemd-logind --grep fail
+    siemquery --range 20170726020000-20170726050000 -s auth --grep fail
+
+.SH NOTES
+Arguments under `query options` that are not time-related can be used more than once.
+
+.SH SEE ALSO
+    siemcli(7)
+    siemparse(1)
+    siemtrigger(1)
+    siemmanage(1)
+
+.SH FILES
+    /etc/siemcli/db.conf
+    /etc/siemcli/sections.conf
+    /usr/share/doc/siemcli/example_rules.json
+    /usr/share/doc/siemcli/README.md
+    /usr/share/doc/siemcli/LICENSE
+    /usr/share/doc/siemcli/CHANGELOG.md
+
+  
+ 

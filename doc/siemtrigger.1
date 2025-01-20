@@ -1,0 +1,41 @@
+.TH SIEMTRIGGER 1
+.SH NAME
+siemtrigger - CLI tool to trigger SIEM events based on siemcli database analysis
+
+.SH SYNOPSIS
+
+\fBsiemtrigger\fR [\fB-h] [\fB--version\fR] [\fB-c \fICONFIG\fR] [\fB--table \fITABLE\fR] [\fB--oneshot\fR]
+
+.SH DESCRIPTION
+\fBsiemtrigger\fR is a tool to trigger SIEM events based on siemcli database analysis.
+
+.SH OPTIONS
+  
+  usage: \fBsiemtrigger\fR [\fBoptions\fR]
+
+  optional arguments:
+    -h, --help     show this help message and exit
+    --version      show program's version number and exit
+    -c CONFIG      set the config file
+    --table TABLE  set a rule table
+    --oneshot      check database once and exit
+
+.SH EXAMPLES
+    siemtrigger -c config/db.conf --table RULESAuth
+
+.SH SEE ALSO
+    siemcli(7)
+    siemparse(1)
+    siemquery(1)
+    siemmanage(1)
+
+.SH FILES
+    /etc/siemcli/db.conf
+    /etc/siemcli/sections.conf
+    /usr/share/doc/siemcli/example_rules.json
+    /usr/share/doc/siemcli/README.md
+    /usr/share/doc/siemcli/LICENSE
+    /usr/share/doc/siemcli/CHANGELOG.md
+
+  
+ 
