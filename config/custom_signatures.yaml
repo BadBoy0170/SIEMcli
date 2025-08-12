@@ -1,0 +1,34 @@
+custom_threats:
+  - name: "Reverse Shell Detection"
+    pattern: "(nc|netcat|python.*socket|bash.*dev.*tcp)"
+    severity: "CRITICAL"
+  
+  - name: "File Upload Attack"
+    pattern: "(\\.php|\\.jsp|\\.asp).*multipart/form-data"
+    severity: "HIGH"
+    
+  - name: "Directory Traversal"
+    pattern: "(\\.\\.|%2e%2e|\\.\\./|\\.\\\\)"
+    severity: "HIGH"
+    
+  - name: "Command Execution"
+    pattern: "(eval\\(|exec\\(|system\\(|passthru\\(|shell_exec\\()"
+    severity: "CRITICAL"
+
+web_attacks:
+  - name: "XSS Attack"
+    pattern: "(<script>|javascript:|vbscript:|onload=|onerror=)"
+    severity: "HIGH"
+    
+  - name: "Local File Inclusion"
+    pattern: "(include.*\\.\\.\/|require.*\\.\\.\/|include_once.*\\.\\.\/)"
+    severity: "HIGH"
+
+malware_signatures:
+  - name: "Cryptocurrency Miner"
+    pattern: "(xmrig|minerd|cryptonight|stratum\\+tcp)"
+    severity: "HIGH"
+    
+  - name: "Ransomware Indicator"
+    pattern: "(\\.encrypted|\\.locked|\\.crypted|DECRYPT_INSTRUCTION)"
+    severity: "CRITICAL" 
