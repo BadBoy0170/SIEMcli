@@ -7,7 +7,7 @@ An advanced SIEM system with integrated AI-powered detection, real-time log anal
 ```bash
 # Clone the repository
 git clone https://github.com/BadBoy0170/SIEMcli.git
-cd AdvancedSIEM
+cd SIEMcli
 
 # Create and activate virtual environment
 python3 -m venv venv
@@ -53,7 +53,7 @@ python3 src/siem_core.py
 ## Directory Structure
 
 ```
-AdvancedSIEM/
+SIEMcli/
 ├── config/
 │   └── custom_signatures.yaml    # Custom detection signatures
 ├── logs/
