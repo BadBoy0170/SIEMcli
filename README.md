@@ -1,4 +1,4 @@
-# AdvancedSIEM - AI-Powered Security Information and Event Management System
+# SIEMcli - AI-Powered Security Information and Event Management System
 
 An advanced SIEM system with integrated AI-powered detection, real-time log analysis, and intelligent correlation capabilities.
 
