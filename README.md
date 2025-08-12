@@ -6,7 +6,7 @@ An advanced SIEM system with integrated AI-powered detection, real-time log anal
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/BadBoy0170/SIEMcli.git
 cd AdvancedSIEM
 
 # Create and activate virtual environment
